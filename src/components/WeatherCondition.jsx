@@ -1,4 +1,3 @@
-// import Image from "next/image";
 const WeatherCondition = ({ condition }) => {
   return (
     <div className="weather-condition h-full  w-full flex items-center">

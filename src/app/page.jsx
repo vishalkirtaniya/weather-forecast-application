@@ -18,14 +18,13 @@ import SeaAndGround from "@/components/SeaAndGround";
 import ToggleUnitButton from "@/components/ToggleUnitButton";
 
 const Home = () => {
-  const [weatherData, setWeatherData] = useState(null); // Initialized to null instead of false
+  const [weatherData, setWeatherData] = useState(null);
   const [forecastData, setForecastData] = useState([]);
   const [city, setCity] = useState("New Delhi");
   const [unit, setUnit] = useState("metric"); // 'metric' for Celsius, 'imperial' for Fahrenheit
   const [error, setError] = useState(null);
   const inputRef = useRef();
 
-  // Fetch current weather and forecast
   const getWeather = async (selectedCity) => {
     try {
       const weather = await fetchWeatherData(selectedCity);
@@ -42,12 +41,10 @@ const Home = () => {
     }
   };
 
-  // Run on mount to fetch default city weather
   useEffect(() => {
     getWeather(city);
   }, [city]);
 
-  // Handle unit conversion
   const handleToggleUnit = () => {
     setUnit((prevUnit) => (prevUnit === "metric" ? "imperial" : "metric"));
   };
@@ -57,7 +54,7 @@ const Home = () => {
       <div className="xxs:h-[810px] lg:h-[700px] xxs:w-[97%] lg:w-[1000px] shadow-sm shadow-customGrey rounded-[2.2rem] flex xxs:flex-col md:flex-row overflow-hidden xxs:scale-[80%] md:scale-100">
         {error ? (
           <div className="text-red-500">Error: {error}</div>
-        ) : weatherData ? ( // Check if weatherData is available before rendering
+        ) : weatherData ? (
           <>
             <div className="xxs:h-[30%] xs:h-[40%] xxs:w-full md:h-full md:w-[30%] bg-customWhite xxs:p-5 md:p-11 flex flex-col justify-between">
               <TodayWeather
@@ -104,7 +101,7 @@ const Home = () => {
                   <div className="h-[46%] w-full flex justify-between">
                     <div className="h-full w-[30%] rounded-2xl bg-customWhite p-3">
                       <Coordinates
-                        longitude={weatherData.coord.lon} // Fixed key for longitude
+                        longitude={weatherData.coord.lon}
                         latitude={weatherData.coord.lat}
                       />
                     </div>

@@ -1,7 +1,6 @@
-import Image from "next/image"; // Ensure Image is imported if using Next.js
-
+import Image from "next/image";
 import WeatherCondition from "./WeatherCondition";
-import TemperatureDisplay from "./TemperatureDisplay"; // Assuming you have this component
+import TemperatureDisplay from "./TemperatureDisplay";
 import SearchBox from "./SearchBox";
 import WeatherImage from "./weatherImage";
 
@@ -46,7 +45,6 @@ const TodayWeather = ({
           </div>
           <div className="xxs:h-full md:h-2/3 xxs:w-2/3 md:w-full flex flex-col justify-between ">
             <TemperatureDisplay temp={temp} unit={unit} />{" "}
-            {/* Assuming temperature in Celsius */}
             <h3 className="opacity-80 xxs:text-md xs:text-lg sm:text-xl">
               {dayOfWeek},{" "}
               <b className="opacity-50">{getLocalTime(timezoneOffset)}</b>
@@ -64,7 +62,7 @@ const TodayWeather = ({
                   alt="Rain Icon"
                 />
                 <h3 className="px-1 xxs:text-sm md:text-md font-semibold">
-                  Weather - {rain} {/* Safely access currentWeather */}
+                  Weather - {rain}
                 </h3>
               </div>
             </div>
@@ -73,8 +71,6 @@ const TodayWeather = ({
             </div>
           </div>
         </div>
-
-        {/* Display the current temperature */}
       </div>
     </>
   );

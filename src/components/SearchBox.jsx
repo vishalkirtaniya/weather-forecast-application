@@ -19,7 +19,7 @@ const SearchBox = ({ inputRef, handleSearch }) => {
           />
         </div>
         <button
-          onClick={() => handleSearch(inputRef.current.value)} // Trigger API call when the button is clicked
+          onClick={() => handleSearch(inputRef.current.value)}
           className="rounded-full h-[30px] w-[30px] flex items-center justify-center hover:bg-customGrey shadow-md shadow-customGrey bg-customOffWhite transition duration-150"
         >
           <Image

@@ -60,7 +60,7 @@ This is a fully responsive web application built using Next.js and React that pr
    npm install
    ```
 
-4. Create a `.env` file in the root of your project and add your OpenWeather API key:
+4. Create a `.env.local` file in the root of your project and add your OpenWeather API key:
 
    ```
    NEXT_PUBLIC_WEATHER_API_KEY=your_openweather_api_key

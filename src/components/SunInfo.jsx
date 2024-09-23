@@ -35,9 +35,6 @@ const SunInfo = ({ sunrise, sunset }) => {
           </h1>
         </div>
       </div>
-
-      {/* <p>🌅 Sunrise: {convertUnixToTime(sunrise)}</p>
-      <p>🌇 Sunset: {convertUnixToTime(sunset)}</p> */}
     </div>
   );
 };

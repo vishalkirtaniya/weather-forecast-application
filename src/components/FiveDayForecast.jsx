@@ -22,7 +22,7 @@ const FiveDayForecast = ({ forecastData, unit }) => {
           key={index}
           day={day}
           unit={unit}
-          dayOfWeek={getDayOfWeek(day.dt)} // Pass the day of the week here
+          dayOfWeek={getDayOfWeek(day.dt)}
         />
       ))}
     </div>
