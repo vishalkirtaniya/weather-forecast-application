@@ -30,7 +30,7 @@ export const allGifs = {
   "02n": "/assets/gifs/cloudy-night.webp",
   "03d": "/assets/gifs/clouds.webp",
   "03n": "/assets/gifs/cloudy-night.webp",
-  "04d": "/assets/gifs/cloudys.webp",
+  "04d": "/assets/gifs/clouds.webp",
   "04n": "/assets/gifs/cloudy-night.webp",
   "09d": "/assets/gifs/rain-1.webp",
   "09n": "/assets/gifs/rain.webp",
