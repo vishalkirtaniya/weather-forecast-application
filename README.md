@@ -2,6 +2,10 @@
 
 This is a fully responsive web application built using Next.js and React that provides real-time weather updates and a 5-day forecast for any city in the world. The application fetches weather data from the OpenWeather API, allowing users to search for specific cities and switch between Celsius and Fahrenheit temperature units.
 
+## Live Demo
+
+**[Weather Forecast](https://wether-forecast.netlify.app/)**
+
 ## Features
 
 - **Current Weather Status**: Displays real-time weather conditions for the searched city.
