@@ -4,7 +4,7 @@ This is a fully responsive web application built using Next.js and React that pr
 
 ## Live Demo
 
-**[Weather Forecast](https://wether-forecast.netlify.app/)**
+**[Weather Forecast](https://weather-forecast-07.netlify.app/)**
 
 ## Features
 
