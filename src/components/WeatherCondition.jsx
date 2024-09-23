@@ -8,7 +8,7 @@ const WeatherCondition = ({ condition }) => {
         width={30}
         alt="Weather Icon"
       />
-      <p className="px-1 text-sm font-semibold">{condition}</p>
+      <p className="px-1 xxs:text-sm md:text-md font-semibold">{condition}</p>
     </div>
   );
 };

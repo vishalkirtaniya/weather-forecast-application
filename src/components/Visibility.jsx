@@ -5,7 +5,7 @@ const Visibility = ({ visibility }) => {
   return (
     <>
       <div className="h-full w-full  relative">
-        <h3 className="text-sm font-semibold mb-5 opacity-50 absolute">
+        <h3 className="xxs:text-[10px] sm:text-xs md:text-sm font-semibold mb-5 opacity-50 absolute">
           Visibility
         </h3>
         <div className="h-full w-full flex flex-col justify-center absolute">
@@ -18,8 +18,9 @@ const Visibility = ({ visibility }) => {
               className="rounded-full"
             />
 
-            <h1 className="text-3xl font-bold ">
-              {inKm} <span className="text-lg">Km/h</span>
+            <h1 className="xxs:text-xs sm:text-sm md:text-3xl font-bold ">
+              {inKm}{" "}
+              <span className="xxs:text-[6px] sm:text-sm md:text-lg">Km/h</span>
             </h1>
           </div>
         </div>

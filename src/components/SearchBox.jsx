@@ -4,7 +4,7 @@ const SearchBox = ({ inputRef, handleSearch }) => {
   return (
     <>
       <div className="searchBar h-[30px] w-full flex items-center justify-between">
-        <div className="h-full w-[174px] flex items-center gap-1">
+        <div className="h-full xxs:w-[80%] md:w-[174px] flex items-center gap-1">
           <Image
             src={"/assets/icons/location.svg"}
             width={20}
@@ -15,7 +15,7 @@ const SearchBox = ({ inputRef, handleSearch }) => {
             type="text"
             ref={inputRef}
             placeholder="Search for places..."
-            className="focus:outline-none focus:border-customGrey focus:shadow-xl focus:shadow-customGrey rounded-md h-[25px] w-[150px] pl-1 text-sm text-black font-semibold transition duration-75"
+            className="focus:outline-none focus:border-customGrey focus:shadow-xl focus:shadow-customGrey rounded-md h-[25px] xxs:w-[90%] md:w-[150px] pl-1 text-sm text-black font-semibold transition duration-75"
           />
         </div>
         <button

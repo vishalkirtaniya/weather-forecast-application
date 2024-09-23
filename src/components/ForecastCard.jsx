@@ -9,15 +9,15 @@ const ForecastCard = ({ day, unit, icon }) => {
 
   return (
     <div className="h-full w-1/6 rounded-lg shadow-md shadow-customOffWhite bg-customWhite flex flex-col items-center justify-between  relative">
-      <h3 className="text-md font-semibold mt-1">{dayOfWeek}</h3>
+      <h3 className="xxs:text-[10px] sm:text-sm md:text-md font-semibold mt-1">
+        {dayOfWeek}
+      </h3>
       <img
         src={icon}
-        height={70}
-        width={70}
         alt="alt icon"
-        className=" absolute top-[18px]"
+        className="xxs:h-[50px] xxs:w-[50px] md:h-[70px] md:w-[70px] absolute top-[18px]"
       />
-      <h3 className="text-sm text-black font-semibold mb-1">
+      <h3 className="xxs:text-xs md:text-sm text-black font-semibold mb-1">
         {Math.round(highTemp)}°
         <span className="opacity-40 font-semibold ">
           {Math.round(lowTemp)}°

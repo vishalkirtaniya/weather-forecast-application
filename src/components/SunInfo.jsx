@@ -8,10 +8,10 @@ const SunInfo = ({ sunrise, sunset }) => {
 
   return (
     <div className="h-full w-full relative">
-      <h3 className="text-sm font-semibold mb-5 opacity-50 absolute">
+      <h3 className="xxs:text-[10px] sm:text-xs md:text-sm font-semibold mb-5 opacity-50 absolute">
         Sunrise & Sunset
       </h3>
-      <div className="h-full w-full flex flex-col justify-center gap-2 absolute pt-3">
+      <div className="h-full w-full flex flex-col justify-center gap-2 absolute xxs:pt-5 md:pt-3">
         <div className="h-[30px] w-full flex items-center gap-2">
           <Image
             src={"/assets/icons/sunrise.png"}
@@ -19,7 +19,9 @@ const SunInfo = ({ sunrise, sunset }) => {
             width={30}
             alt="sunrise icon"
           />
-          <h1 className="text-md font-bold">{convertUnixToTime(sunrise)}</h1>
+          <h1 className="xxs:text-[10px] sm:text-sm md:text-md font-bold">
+            {convertUnixToTime(sunrise)}
+          </h1>
         </div>
         <div className="h-[30px] w-full flex items-center gap-2">
           <Image
@@ -28,7 +30,9 @@ const SunInfo = ({ sunrise, sunset }) => {
             width={30}
             alt="sunset icon"
           />
-          <h1 className="text-md font-bold">{convertUnixToTime(sunset)}</h1>
+          <h1 className="xxs:text-[10px] sm:text-sm md:text-md font-bold">
+            {convertUnixToTime(sunset)}
+          </h1>
         </div>
       </div>
 

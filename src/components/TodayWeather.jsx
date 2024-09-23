@@ -1,5 +1,5 @@
-// import Image from "next/image"; // Ensure Image is imported if using Next.js
-import CityName from "./CityName";
+import Image from "next/image"; // Ensure Image is imported if using Next.js
+
 import WeatherCondition from "./WeatherCondition";
 import TemperatureDisplay from "./TemperatureDisplay"; // Assuming you have this component
 import SearchBox from "./SearchBox";
@@ -9,7 +9,6 @@ const TodayWeather = ({
   city,
   search,
   cityname,
-  name,
   image,
   temp,
   unit,
@@ -34,48 +33,48 @@ const TodayWeather = ({
   };
   return (
     <>
-      <div className="todayWeather h-[72%] w-full flex flex-col justify-between items-start">
+      <div className="todayWeather h-[100%] w-full flex flex-col justify-between items-start">
         <SearchBox inputRef={city} handleSearch={search} />
-
-        <CityName name={name} />
-        <img src={image} height={200} width={200} alt="Main Weather Icon" />
+        <div className="xxs:h-full  md:h-full w-full flex xxs:flex-row md:flex-col ">
+          <div className="xxs:h-full md:h-1/3 xxs:w-1/3 md:w-full flex items-center">
+            <Image
+              src={image}
+              height={200}
+              width={200}
+              alt="Main Weather Icon"
+            />
+          </div>
+          <div className="xxs:h-full md:h-2/3 xxs:w-2/3 md:w-full flex flex-col justify-between ">
+            <TemperatureDisplay temp={temp} unit={unit} />{" "}
+            {/* Assuming temperature in Celsius */}
+            <h3 className="opacity-80 xxs:text-md xs:text-lg sm:text-xl">
+              {dayOfWeek},{" "}
+              <b className="opacity-50">{getLocalTime(timezoneOffset)}</b>
+            </h3>
+            <div className="h-[2px] w-full bg-customOffWhite"></div>
+            <div className="xxs:h-[50px] md:h-[20%] w-full flex flex-col justify-center xxs:gap-1 md:gap-2 ">
+              <div className="h-[20px] w-full flex items-center">
+                <WeatherCondition condition={description} />
+              </div>
+              <div className="h-[20px] w-full flex items-center">
+                <img
+                  src={"/assets/icons/rainy-5.svg"}
+                  height={30}
+                  width={30}
+                  alt="Rain Icon"
+                />
+                <h3 className="px-1 xxs:text-sm md:text-md font-semibold">
+                  Weather - {rain} {/* Safely access currentWeather */}
+                </h3>
+              </div>
+            </div>
+            <div className="location-showcase xxs:h-[40px] xs:h-[50px] sm:h-[60px] md:h-[100px] xxs:w-[65%] sm:w-[50%] md:w-full rounded-2xl bg-customOffWhite flex justify-center items-center overflow-hidden">
+              <WeatherImage image={gif} cityname={cityname} />
+            </div>
+          </div>
+        </div>
 
         {/* Display the current temperature */}
-        <div>
-          <TemperatureDisplay temp={temp} unit={unit} />{" "}
-          {/* Assuming temperature in Celsius */}
-        </div>
-
-        {/* Example hardcoded date, but you can replace it with dynamic data */}
-        <h3 className="opacity-80 text-xl">
-          {dayOfWeek},{" "}
-          <b className="opacity-50">{getLocalTime(timezoneOffset)}</b>
-        </h3>
-
-        <div className="h-[2px] w-full bg-customOffWhite"></div>
-
-        {/* Current weather description and additional info */}
-        <div className="h-[15%] w-full flex flex-col justify-evenly">
-          <div className="h-[20px] w-full flex items-center">
-            <WeatherCondition condition={description} />
-          </div>
-
-          <div className="h-[20px] w-full flex items-center">
-            <img
-              src={"/assets/icons/rainy-5.svg"}
-              height={30}
-              width={30}
-              alt="Rain Icon"
-            />
-            <h3 className="px-1 text-sm font-semibold">
-              Weather - {rain} {/* Safely access currentWeather */}
-            </h3>
-          </div>
-        </div>
-      </div>
-
-      <div className="location-showcase h-[100px] w-full rounded-2xl bg-customOffWhite flex justify-center items-center overflow-hidden">
-        <WeatherImage image={gif} cityname={cityname} />
       </div>
     </>
   );

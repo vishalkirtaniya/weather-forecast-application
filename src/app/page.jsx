@@ -15,6 +15,7 @@ import TodayWeather from "@/components/TodayWeather";
 import WindSpeed from "@/components/WindSpeed";
 import Visibility from "@/components/Visibility";
 import SeaAndGround from "@/components/SeaAndGround";
+import ToggleUnitButton from "@/components/ToggleUnitButton";
 
 const Home = () => {
   const [weatherData, setWeatherData] = useState(null); // Initialized to null instead of false
@@ -43,8 +44,8 @@ const Home = () => {
 
   // Run on mount to fetch default city weather
   useEffect(() => {
-    getWeather(city);
-  }, [city]);
+    getWeather(city, unit);
+  }, [city, unit]);
 
   // Handle unit conversion
   const handleToggleUnit = () => {
@@ -52,13 +53,13 @@ const Home = () => {
   };
 
   return (
-    <div className="h-[100vh] w-full bg-customGrey flex justify-center items-center">
-      <div className="h-[700px] w-[1000px] shadow-sm shadow-customGrey rounded-[2.2rem] flex overflow-hidden">
+    <div className="h-[100vh] w-full bg-customGrey flex  justify-center items-center">
+      <div className="xxs:h-[90svh] lg:h-[700px] xxs:w-[97%] lg:w-[1000px] shadow-sm shadow-customGrey rounded-[2.2rem] flex xxs:flex-col md:flex-row overflow-hidden">
         {error ? (
           <div className="text-red-500">Error: {error}</div>
         ) : weatherData ? ( // Check if weatherData is available before rendering
           <>
-            <div className="h-full w-[30%] bg-customWhite p-11 flex flex-col justify-between">
+            <div className="xxs:h-[30%] xs:h-[40%] xxs:w-full md:h-full md:w-[30%] bg-customWhite xxs:p-5 md:p-11 flex flex-col justify-between">
               <TodayWeather
                 city={inputRef}
                 search={() => getWeather(inputRef.current.value)}
@@ -73,14 +74,16 @@ const Home = () => {
                 rain={weatherData.weather[0].main}
               />
             </div>
-            <div className="h-full w-[70%] bg-customOffWhite p-11 flex flex-col justify-between">
+            <div className="xxs:h-[70%] xxs:w-full md:h-full md:w-[70%] bg-customOffWhite xxs:p-5 md:p-11 flex flex-col justify-between">
               <div className="h-[10%] w-full flex justify-between">
-                <div className="h-full w-1/2 flex items-center">
+                <div className="h-full w-full flex items-center justify-between ">
                   <div className="h-[50%] w-[70px] relative overflow-hidden">
-                    <h3 className="text-base text-left font-semibold opacity-80">
+                    <h3 className="xxs:text-sm md:text-base text-left font-semibold opacity-80">
                       Week
                     </h3>
                   </div>
+
+                  <ToggleUnitButton toggleUnit={handleToggleUnit} unit={unit} />
                 </div>
               </div>
               <div className="h-[18%] w-full flex justify-between">
@@ -94,7 +97,7 @@ const Home = () => {
                 ))}
               </div>
               <div className="h-[60%] w-full flex flex-col justify-between">
-                <h1 className="text-base text-left font-semibold opacity-80">
+                <h1 className="xxs:text-sm md:text-base text-left font-semibold opacity-80">
                   Today's Highlights
                 </h1>
                 <div className="h-[90%] w-full flex flex-col justify-between">

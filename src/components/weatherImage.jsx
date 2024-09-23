@@ -7,11 +7,11 @@ const WeatherImage = ({ image, cityname }) => {
           height={100}
           width={200}
           alt="gifs"
-          className="scale-[150%]"
+          className="scale-[170%]"
         />
       </div>
       <div className="h-full w-full z-30 absolute flex justify-center items-center">
-        <h1 className="text-3xl text-customOffWhite  font-bold absolute ">
+        <h1 className="xxs:text-lg xs:text-xl sm:text-2xl md:text-3xl text-customOffWhite  font-bold absolute ">
           {cityname}
         </h1>
       </div>

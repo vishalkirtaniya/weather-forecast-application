@@ -6,7 +6,7 @@ const SeaAndGround = ({ sea, ground }) => {
   const groundLevel = ground / 10;
   return (
     <div className="h-full w-full relative">
-      <h3 className="text-sm font-semibold mb-5 opacity-50 absolute">
+      <h3 className="xxs:text-[10px] sm:text-xs md:text-sm font-semibold mb-5 opacity-50 absolute">
         Sea & Ground Level
       </h3>
       <div className="h-full w-full flex flex-col justify-center gap-2 absolute pt-3">
@@ -18,8 +18,8 @@ const SeaAndGround = ({ sea, ground }) => {
             alt="sunrise icon"
             className="rounded-full overflow-hidden"
           />
-          <h1 className="text-md font-bold">
-            {seaLevel} <span className="text-sm">M</span>
+          <h1 className="xxs:text-[10px] sm:text-sm md:text-md font-bold">
+            {seaLevel} <span className="xxs:text-[6px] sm:text-sm">M</span>
           </h1>
         </div>
         <div className="h-[30px] w-full flex items-center gap-2">
@@ -30,8 +30,8 @@ const SeaAndGround = ({ sea, ground }) => {
             alt="sunset icon"
             className="rounded-full overflow-hidden"
           />
-          <h1 className="text-md font-bold">
-            {groundLevel} <span className="text-sm">M</span>
+          <h1 className="xxs:text-[10px] sm:text-sm md:text-md font-bold">
+            {groundLevel} <span className="xxs:text-[6px] sm:text-sm">M</span>
           </h1>
         </div>
       </div>
