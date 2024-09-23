@@ -53,8 +53,8 @@ const Home = () => {
   };
 
   return (
-    <div className="h-[100vh] w-full bg-customGrey flex  justify-center items-center">
-      <div className="xxs:h-[90svh] lg:h-[700px] xxs:w-[97%] lg:w-[1000px] shadow-sm shadow-customGrey rounded-[2.2rem] flex xxs:flex-col md:flex-row overflow-hidden">
+    <div className="h-[100svh] w-full bg-customGrey flex  justify-center items-center">
+      <div className="xxs:h-[810px] lg:h-[700px] xxs:w-[97%] lg:w-[1000px] shadow-sm shadow-customGrey rounded-[2.2rem] flex xxs:flex-col md:flex-row overflow-hidden">
         {error ? (
           <div className="text-red-500">Error: {error}</div>
         ) : weatherData ? ( // Check if weatherData is available before rendering
